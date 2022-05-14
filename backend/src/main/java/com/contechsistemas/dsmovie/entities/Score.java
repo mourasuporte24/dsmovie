@@ -9,12 +9,12 @@ import javax.persistence.Table;
 @Table(name="tb_score")
 public class Score {
 	
+	
+	
 	private Double value;
 	
 	@EmbeddedId
-	private ScorePk id = new ScorePk();
-	
-	
+	private ScorePK id = new ScorePK();
 	
 	
 	
@@ -34,11 +34,11 @@ public class Score {
 	
 	
 
-	public ScorePk getId() {
+	public ScorePK getId() {
 		return id;
 	}
 
-	public void setId(ScorePk id) {
+	public void setId(ScorePK id) {
 		this.id = id;
 	}
 
@@ -49,10 +49,6 @@ public class Score {
 	public void setValue(Double value) {
 		this.value = value;
 	}
-
-	
-
-	
 	
 	
 }
