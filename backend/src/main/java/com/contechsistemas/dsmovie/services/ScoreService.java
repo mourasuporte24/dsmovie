@@ -53,14 +53,14 @@ public class ScoreService {
 		}
 
 		double avg = sum / movie.getScores().size();
-		
+
 		movie.setScore(avg);
 		movie.setCount(movie.getScores().size());
-		
+
 		movie = movieRepository.save(movie);
-		
+
 		return new  MovieDTO(movie);
-		
+
 
 	}
 

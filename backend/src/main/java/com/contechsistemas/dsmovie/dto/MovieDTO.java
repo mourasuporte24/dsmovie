@@ -5,29 +5,28 @@ import com.contechsistemas.dsmovie.entities.Movie;
 public class MovieDTO {
 
 	private Long id;
+	private String title;
+	private Double score;
 	private Integer count;
 	private String image;
-	private Double score;
-	private String title;
 
 	public MovieDTO() {
-
 	}
 
-	public MovieDTO(Long id, Integer count, String image, Double score, String title) {
+	public MovieDTO(Long id, String title, Double score, Integer count, String image) {
 		this.id = id;
-		this.count = count;
-		this.image = image;
-		this.score = score;
 		this.title = title;
+		this.score = score;
+		this.count = count;
+		this.setImage(image);
 	}
 
 	public MovieDTO(Movie movie) {
 		id = movie.getId();
-		count = movie.getCount();
-		image = movie.getImage();
-		score = movie.getScore();
 		title = movie.getTitle();
+		score = movie.getScore();
+		count = movie.getCount();
+		setImage(movie.getImage());
 	}
 
 	public Long getId() {
@@ -38,12 +37,16 @@ public class MovieDTO {
 		this.id = id;
 	}
 
-	public Integer getCount() {
-		return count;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setCount(Integer count) {
-		this.count = count;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public Double getScore() {
+		return score;
 	}
 
 	public String getImage() {
@@ -54,20 +57,16 @@ public class MovieDTO {
 		this.image = image;
 	}
 
-	public Double getScore() {
-		return score;
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public void setScore(Double score) {
 		this.score = score;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
 	}
 
 }
